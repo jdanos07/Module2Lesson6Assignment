@@ -16,16 +16,10 @@ reviews = ["This product is really good. I'm impressed with its quality.",
 key_words = ['excellent', 'good', 'average', 'poor','bad']
 
 for review in reviews:
-        emphasized_review = review
-        for key_word in key_words:
-            # key_word = key_word.lower()
-            emphatic_key_words = key_word.upper()
-            if ((review.lower().find(key_word)) != -1):
-                emphasized_review = review.replace(key_word, emphatic_key_words)
-                print(emphasized_review)
-
-
-
-
-
-
+    emphasized_review = review
+    for key_word in key_words:
+        cap_key_word = key_word.capitalize()
+        emphatic_key_words = key_word.upper()
+        emphasized_review = emphasized_review.replace(key_word, emphatic_key_words)            
+        emphasized_review = emphasized_review.replace(cap_key_word, emphatic_key_words)
+    print(emphasized_review)
