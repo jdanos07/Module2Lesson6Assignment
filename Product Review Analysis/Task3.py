@@ -9,9 +9,13 @@ reviews = ["This amazing product is really good. I'm impressed with its awesome 
            "The product was average. Nothing extraordinary about it."]
 
 for review in reviews:
-    slice_review = slice(0,31)
-    snapshot_review = review[slice_review]
+    snapshot_review = review[:30]
+    if review[30].isalnum():
+        cut_off = -1
+        for i in range(30):
+            if snapshot_review[i] == ' ':
+                cut_off = i
+        if cut_off != -1:
+            snapshot_review = snapshot_review[:cut_off]
     print(f"\"{snapshot_review}...\"")
-
-    # need to implement some sort of if statement to have the word complete before 
-    # cutting off
+  
